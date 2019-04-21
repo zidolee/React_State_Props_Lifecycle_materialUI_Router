@@ -1,0 +1,8 @@
+**pinterest
+www.material-ui.com  ==> 디자인을 쓰기위한 라이브러리
+https://semantic-ui.com/
+antdesign.com
+https://reacttraining.com/react-router/web/guides/quick-start  ==> react router dom : 페이지 이동
+state : 
+
+생명주기?

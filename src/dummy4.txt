@@ -1,0 +1,71 @@
+import React, { Component,Fragment } from 'react';
+import './App.css';
+
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log("constructor");
+  }
+
+  // props =>이전의 state로 전달할때
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log("getDerivedStateFromProps");
+    return null;
+  }
+
+  //
+  componentDidMount() {
+    console.log("componentDidMound");
+  }
+  
+  //화면을 다시 그려야하는지(render) 아닌지 확인
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shouldComponentUpdate");
+    if(nextState.number > 10) {
+      return false;
+    }
+    return true;
+  }
+
+
+  //
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("getSnapshotBeforeUpdate")
+    const snapshot = {}
+    return snapshot
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log("componentDidUpdate")
+  }
+
+  //화면상 제거 될 때 호출
+  componentWillUnmount(error, info) {
+    console.log("componentWillUnmount")
+  }
+
+  //컴포넌트에서 에러가 발생했을때 호출
+  componentDidCatch() {
+
+  }
+  state = {
+    number : 7
+  }
+  onClick = () => {
+    this.setState({
+      number :this.state.number+1
+    })
+  }
+  //화면상에 보여질 값
+  render() {
+    console.log("render")
+    const {number} = this.state;
+    return (
+      <h1 onClick = {this.onClick}>{number}</h1>
+    );
+  }
+}
+
+export default App;

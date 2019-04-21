@@ -1,0 +1,40 @@
+// function Profile(props) {
+//     const style = {
+//         backgroundColor : props.bg,
+//         color : props.color
+//     }
+//     return <h1 style={style}>{myName} {myAge}</h1>
+// }
+class Profile extends Component {
+    static defaultProps = {
+        bg : 'blue',
+        color : " white"
+    }
+    render() {
+        const {bg, color} = this.props;
+            const style = {
+                backgroundColor : bg,
+                color : color
+            }
+            return <h1 style={style}>{myName} {myAge}</h1>
+
+    }
+}
+
+
+// jsx 문법
+const myName = 'jack';
+const myAge = 20;
+const view = <Fragment>
+                <h1>HelloWorld</h1>
+                <h1>Okay</h1>
+                <h1 style={{backgroundColor:"crimson", color:"white"}}>{myName} {myAge}</h1>
+                <Profile></Profile>
+             </Fragment>
+
+//순수 자바스크립트
+// const view2 = React.createElement(
+//     'h1',
+//     {className : 'greeting'},
+//     'Hello, world'
+// );
